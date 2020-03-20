@@ -23,6 +23,10 @@ DeclareAttribute( "UnderlyingCategory", IsCapCategoryOfExactTriangles );
 
 DeclareOperation( "ExactTriangle", [ IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism ] );
 
+DeclareAttribute( "StandardExactTriangle", IsCapCategoryMorphism );
+
+DeclareOperation( "ExactTriangleByOctahedraAxiom", [ IsCapCategoryMorphism, IsCapCategoryMorphism ] );
+
 DeclareAttribute( "DomainMorphism", IsCapExactTriangle );
 
 DeclareAttribute( "MorphismIntoConeObject", IsCapExactTriangle );
@@ -46,3 +50,18 @@ KeyDependentOperation( "MorphismAt", IsCapExactTrianglesMorphism, IsInt, ReturnT
 
 DeclareOperation( "\[\]", [ IsCapExactTrianglesMorphism, IsInt ] );
 
+######
+
+DeclareProperty( "IsIdenticalToStandardExactTriangle", IsCapExactTriangle );
+
+DeclareAttribute( "IsomorphicStandardExactTriangle", IsCapExactTriangle );
+
+DeclareAttribute( "Rotation", IsCapExactTriangle );
+
+DeclareOperation( "Rotation", [ IsCapExactTriangle, IsBool ] );
+
+DeclareAttribute( "ReverseRotation", IsCapExactTriangle );
+
+DeclareAttribute( "WitnessIsomorphismIntoStandardExactTriangle", IsCapExactTriangle );
+
+DeclareAttribute( "WitnessIsomorphismFromStandardExactTriangle", IsCapExactTriangle );

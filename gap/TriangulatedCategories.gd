@@ -92,7 +92,6 @@ DeclareOperation( "AddMorphismIntoStandardConeObject", [ IsCapCategory, IsFuncti
 DeclareOperation( "AddMorphismIntoStandardConeObject", [ IsCapCategory, IsList, IsInt ] );
 DeclareOperation( "AddMorphismIntoStandardConeObject", [ IsCapCategory, IsList ] );
 
-
 #! @Description
 #! The arguments are a morphism $\alpha: A \to B$ in a triangulated category and an object $C:=C(\alpha)$.
 #! The output is the morphism $\pi(\alpha):C(\alpha)\to\Sigma A$
@@ -130,6 +129,7 @@ DeclareOperation( "AddMorphismFromStandardConeObject", [ IsCapCategory, IsFuncti
 DeclareOperation( "AddMorphismFromStandardConeObject", [ IsCapCategory, IsFunction, IsInt ] );
 DeclareOperation( "AddMorphismFromStandardConeObject", [ IsCapCategory, IsList, IsInt ] );
 DeclareOperation( "AddMorphismFromStandardConeObject", [ IsCapCategory, IsList ] );
+
 
 #! @Description
 #! The argument is an object $A$ in a triangulated category $\mathcal{T}$. The output is $\Sigma A$.
@@ -425,6 +425,26 @@ DeclareOperation( "AddMorphismBetweenStandardConeObjectsWithGivenObjects", [ IsC
 DeclareOperation( "MorphismBetweenStandardConeObjects",
       [  IsCapCategoryMorphism, IsCapCategoryMorphism, 
           IsCapCategoryMorphism, IsCapCategoryMorphism ] );
+
+
+DeclareOperation( "WitnessIsomorphismIntoStandardConeObjectByExactTriangle",
+      [ IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism ] );
+
+DeclareOperation( "AddWitnessIsomorphismIntoStandardConeObjectByExactTriangle", [ IsCapCategory, IsFunction ] );
+
+DeclareOperation( "AddWitnessIsomorphismIntoStandardConeObjectByExactTriangle", [ IsCapCategory, IsFunction, IsInt ] );
+DeclareOperation( "AddWitnessIsomorphismIntoStandardConeObjectByExactTriangle", [ IsCapCategory, IsList, IsInt ] );
+DeclareOperation( "AddWitnessIsomorphismIntoStandardConeObjectByExactTriangle", [ IsCapCategory, IsList ] );
+
+
+DeclareOperation( "WitnessIsomorphismFromStandardConeObjectByExactTriangle",
+      [ IsCapCategoryMorphism, IsCapCategoryMorphism, IsCapCategoryMorphism ] );
+
+DeclareOperation( "AddWitnessIsomorphismFromStandardConeObjectByExactTriangle", [ IsCapCategory, IsFunction ] );
+
+DeclareOperation( "AddWitnessIsomorphismFromStandardConeObjectByExactTriangle", [ IsCapCategory, IsFunction, IsInt ] );
+DeclareOperation( "AddWitnessIsomorphismFromStandardConeObjectByExactTriangle", [ IsCapCategory, IsList, IsInt ] );
+DeclareOperation( "AddWitnessIsomorphismFromStandardConeObjectByExactTriangle", [ IsCapCategory, IsList ] );
 
 #! @Description
 #! The arguments are two morphisms $\alpha:A\to B$, $\beta:B\to C$.
@@ -826,22 +846,5 @@ DeclareOperation( "AddReverseShiftFactoringIsomorphismWithGivenObjects", [ IsCap
 #! @Section Attributes and Operations
 ##
 ######################################
-
-DeclareAttribute( "ShiftFunctorAttr", IsTriangulatedCategory );
-
-
-if not IsBound( ShiftFunctor ) then
-  DeclareOperation( "ShiftFunctor", [ IsTriangulatedCategory ] );
-fi;
-
-DeclareAttribute( "ReverseShiftFunctor", IsTriangulatedCategory );
-
-DeclareAttribute( "NaturalIsomorphismFromIdentityIntoReverseShiftOfShift", IsTriangulatedCategory );
-
-DeclareAttribute( "NaturalIsomorphismFromIdentityIntoShiftOfReverseShift", IsTriangulatedCategory );
-
-DeclareAttribute( "NaturalIsomorphismFromReverseShiftOfShiftIntoIdentity", IsTriangulatedCategory );
-
-DeclareAttribute( "NaturalIsomorphismFromShiftOfReverseShiftIntoIdentity", IsTriangulatedCategory );
 
 DeclareAttribute( "INSTALL_LOGICAL_IMPLICATIONS_FOR_TRIANGULATED_CATEGORY", IsCapCategory );
